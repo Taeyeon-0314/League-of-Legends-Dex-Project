@@ -24,7 +24,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col justify-center gap-10 mt-5">
-          <Link className="flex flex-col justify-center items-center gap-5 text-amber-400" href="/champions">
+          <Link className="flex flex-col justify-center items-center gap-5 text-amber-400" href="/rotation">
             <div className="relative w-[400px] h-[240px]">
               <Image src="/images/yuumi.jpg" alt="yuumi" width={400} height={400} />
             </div>
@@ -40,7 +40,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex flex-col justify-center gap-10 mt-5 font-medium	">
-          <Link className="flex flex-col justify-center items-center gap-5 text-amber-400" href="/champions">
+          <Link className="flex flex-col justify-center items-center gap-5 text-amber-400" href="/items">
             <div className="relative w-[400px] h-[240px]">
               <Image src="/images/teemo.png" alt="teemo" width={400} height={400} />
             </div>
