@@ -6,8 +6,10 @@ type CardItemProps = {
   name: string;
   imageUrl: string;
   description?: string;
-  linkUrl: string;
+  linkUrl?: string; // 링크가 없는 경우를 고려해 optional로 설정
   extraInfo?: string;
+  width?: number;
+  height?: number;
 };
 
 type CardProps = {
@@ -20,14 +22,35 @@ const Card = ({ items }: CardProps) => {
       {items.length > 0 ? (
         items.map((item) => (
           <div className="border border-solid border-teal-800 rounded p-4 hover:shadow-lg" key={item.id}>
-            <Link href={item.linkUrl}>
-              <div className="flex justify-center">
-                <Image src={item.imageUrl} alt={item.name} width={100} height={100} />
-              </div>
-              <p className="mt-2 font-semibold text-teal-800">{item.name}</p>
-              {item.description && <p className="text-sm text-gray-500">{item.description}</p>}
-              {item.extraInfo && <p className="mt-2 text-sm text-teal-800">{item.extraInfo}</p>}
-            </Link>
+            {item.linkUrl ? (
+              <Link href={item.linkUrl}>
+                <div className="flex justify-center">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={item.width ? item.width : 100}
+                    height={item.height ? item.height : 100}
+                  />
+                </div>
+                <p className="mt-2 font-semibold text-teal-800">{item.name}</p>
+                {item.description && <p className="text-sm text-gray-500">{item.description}</p>}
+                {item.extraInfo && <p className="mt-2 text-sm text-teal-800">{item.extraInfo}</p>}
+              </Link>
+            ) : (
+              <>
+                <div className="flex justify-center">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={item.width ? item.width : 100}
+                    height={item.height ? item.height : 100}
+                  />
+                </div>
+                <p className="mt-2 font-semibold text-teal-800">{item.name}</p>
+                {item.description && <p className="text-sm text-gray-500">{item.description}</p>}
+                {item.extraInfo && <p className="mt-2 text-sm text-teal-800">{item.extraInfo}</p>}
+              </>
+            )}
           </div>
         ))
       ) : (
