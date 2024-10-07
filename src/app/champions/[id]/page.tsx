@@ -40,7 +40,7 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
   ];
 
   const skinItems = champion.skins.map((skin: ChampionSkin) => ({
-    id: skin.id,
+    id: skin.id.toString(),
     name: skin.name === "default" ? "기본 스킨" : skin.name,
     imageUrl: `${process.env.NEXT_RIOT_DDRAGON_URL}/cdn/img/champion/splash/${champion.id}_${skin.num}.jpg`,
     linkUrl: `/champion/${champion.id}`
