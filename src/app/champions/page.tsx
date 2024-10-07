@@ -1,6 +1,4 @@
 import { Champions, Versions } from "@/utils/serverApi";
-import Image from "next/image";
-import Link from "next/link";
 import { Champion } from "@/types/Champion";
 import Card from "@/components/Card";
 
