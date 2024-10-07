@@ -20,3 +20,22 @@ export type ChampionSpell = {
   description: string;
   image: string;
 };
+
+export type ChampionStats = {
+  hp: number;
+  mp: number;
+  armor: number;
+  spellblock: number;
+  attackdamage: number;
+};
+
+export type ChampionDetail = {
+  id: string;
+  name: string;
+  title: string;
+  image: string;
+  description: string;
+  skins: ChampionSkin[];
+  stats: ChampionStats;
+  spells: ChampionSpell[];
+};
