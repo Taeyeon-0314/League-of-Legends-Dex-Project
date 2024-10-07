@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: false,
     images: {
-        domains: ['img.icons8.com'], // 여기에 허용할 도메인 추가
+        formats: ['image/avif', 'image/webp'],
+        domains: ['ddragon.leagueoflegends.com'],
     },
+
 };
 
 export default nextConfig;
